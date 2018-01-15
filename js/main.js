@@ -32,9 +32,15 @@ window.addEventListener('scroll',debounce(function(){
 },200));
 
 $(document).ready(function(){
-	$('body').addClass(animationClass);
 	$(".box-page-1").addClass(animationClass);
+	$('nav ul li a').click(function(e){
+		e.preventDefault();
+		var idscroll = $(this).attr('href'),targetscroll = $(idscroll).offset().top;
+		$('html,body').animate({scrollTop: targetscroll - 300},1500);
+
+	});
 	
+
 	}
 );
 // Slider Projetos

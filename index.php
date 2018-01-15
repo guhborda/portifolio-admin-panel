@@ -14,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 </head>
-<body data-anime="top">
+<body >
 	<header>
 		<nav>
 			<a class="navbar-toggle"></a>
