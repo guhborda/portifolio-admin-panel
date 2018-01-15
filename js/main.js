@@ -34,7 +34,7 @@ window.addEventListener('scroll',debounce(function(){
 $(document).ready(function(){
 	$('body').addClass(animationClass);
 	$(".box-page-1").addClass(animationClass);
-		
+	
 	}
 );
 // Slider Projetos
@@ -49,9 +49,6 @@ var margin = 10;
 var ident = 0;
 var count = (item.length / numImgs) -1;
 var slide = (numImgs * margin) + (item.outerWidth()* numImgs);
-console.log(count);
-
-
 $('.next').click(function(){
 
       if(ident< count){

@@ -1,12 +1,4 @@
 <?php  include 'autoload.php'; 
-use sys\Conexao;
-use classes\Index;
-
-$index = new Index;
-
-$indexQuery = $index->setIndex();
-
-
 
 ?>
 <!DOCTYPE html>
@@ -16,7 +8,7 @@ $indexQuery = $index->setIndex();
 	<meta name="author" content="Gustavo Borda">
 	<meta name="description" content="Portifólio pessoal de Gustavo Borda">
 	<meta name="keywords" content="Portifólio, Dev Web, programador, PHP, Web Design, Web Developer">
-	<title><?php echo $index->getTitle(); ?></title>
+	<title></title>
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -36,24 +28,17 @@ $indexQuery = $index->setIndex();
 	<div class="container">
 		<section class="box box-page-1 about" data-anime="bottom" id="resume">
 			<div class="box-inner row">
-				<div class="col-md-6 top-pic inner-box"><img src="img/perfil/<?php echo $index->getSec1Pic(); ?>"></div>
+				<div class="col-md-6 top-pic inner-box"></div>
 				<div class="col-md-6 inner-box top-about">
 
-					<h3><?php echo $index->getSec1Name1(); ?> <span><?php echo $index->getSec1Name2();?></span></h3>
+					<h3></h3>
 					<div class="social"><ul>
-					<?php
-						$social = $index->getSec1Social();
-						 for($i=0;$i< count($social);$i++){
-					 	 
-					 ?>
-						<a href="<?=$social[$i]['social_url'];?>"><li><i class="fa fa-<?=$social[$i]['social_name'];?>"></i></li></a>
-					<?php
-						}
-					?>
+						
+					
 						</ul>
 					</div>
 					<div class="top-text">
-						<p><?php echo $index->getSec1Text();?></p>
+						<p></p>
 					</div>
 					<div class="group-btn">
 						<a class="btn contact">Ver Mais</a>
@@ -69,7 +54,7 @@ $indexQuery = $index->setIndex();
 		</section>
 		<section class="box box-page-2" data-anime="bottom" id="about">
 			<div class="box-inner row">
-				<h3>About Me</h3><div class="col-md-6 inner-box"><p><?php echo $index->getSec2TxtAbout(); ?></p></div><div class="col-md-6 inner-box"><img src="img/perfil/<?php echo $index->getSec2Pic(); ?>"></div>
+				<h3>About Me</h3><div class="col-md-6 inner-box"><p></p></div><div class="col-md-6 inner-box"><img src="img/perfil/"></div>
 			</div>
 		</section>
 
@@ -487,6 +472,6 @@ $indexQuery = $index->setIndex();
 	</div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
-<script type="text/javascript"></script>
+<script type="text/javascript" src="js/loadIndex.js"></script>
 </body>
 </html>

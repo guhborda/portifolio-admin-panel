@@ -134,6 +134,10 @@ class Index
 	{
 		$this->sec4_projects[] = $projects;
 	}
+	public function getSec4Projects()
+	{
+		return $this->sec4_projects;
+	}
 
 	public function updateIndex($con){
 		$con = new Conexao;

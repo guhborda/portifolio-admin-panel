@@ -6,5 +6,5 @@ if(logged() == true){ ?>
 	<div class="">Estou na home bitch</div>
 </div>
 <?php }else{
-	header('location: login.php');
+	header('location: ../login.php');
 } ?>
