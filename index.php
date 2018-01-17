@@ -54,7 +54,7 @@
 		</section>
 		<section class="box box-page-2" data-anime="bottom" id="about">
 			<div class="box-inner row">
-				<h3>About Me</h3><div class="col-md-6 inner-box"><p></p></div><div class="col-md-6 inner-box"><img src="img/perfil/"></div>
+				<h3>About Me</h3><div class="col-md-6 inner-box"><p></p></div><div class="col-md-6 inner-box sec2pic"></div>
 			</div>
 		</section>
 

@@ -10,7 +10,7 @@ $(function(){
 			//puting section 1
 
 				//profile image
-				$('.box-page-1 .top-pic').append('<img src="img/perfil/'+response.sec1_pic+'.jpg">');
+				$('.box-page-1 .top-pic').append('<img src="uploads/'+response.sec1_pic+'">');
 				//name top
 				$('.top-about h3').append(response.sec1_name1+'<span>'+response.sec1_name2+'</span>');
 				//sec1 social icons
@@ -21,8 +21,11 @@ $(function(){
 
 				//sec1 resume
 				$('.top-about .top-text p').append(response.sec1_txt);
+
+				//sec2 
+
+				$('.box-page-2 p').append(response.sec2_nametxt);
+				$('.box-page-2 .pic').append('<img src="uploads/'+response.sec2_pic+'">');
 		}
 	});
-
-
 });
