@@ -21,6 +21,7 @@ class Index
 	private $sec3_school= array();
 	private $sec3_skills = array();
 	private $sec4_projects = array();
+	private $sec4_pic_projects = array();
 	function __construct()
 	{
 		
@@ -156,8 +157,12 @@ class Index
 		$sec3school = "SELECT * FROM school ORDER BY data DESC";
 		$sec3skills = "SELECT * FROM skills";
 		$sec1social = "SELECT * FROM social";
-		$sec4projects = "SELECT * FROM projects LEFT JOIN categoria ON `projects`.`cat_id` = `categoria`.`id_cat` ";
+		$sec4projects = "SELECT * FROM projects LEFT JOIN categoria ON `projects`.`cat_id` = `categoria`.`id_cat` LEFT JOIN projects_pic ON `projects`.`p_pic_id` = `projects_pic`.`pic_id` ";
 		$ProjCategoria = "SELECT * FROM categoria"; 
+
+		$projects_pictures= "SELECT * FROM projects_pic";
+		$projects_pictures = $con->query($projects_pictures);
+		$projects_pictures = $sec1->fetch(\PDO::FETCH_ASSOC);
 		$sec1 = $con->query($sec1);
 		$sec1 = $sec1->fetch(\PDO::FETCH_ASSOC);
 		$countsec1 = count($sec1);
@@ -198,8 +203,8 @@ class Index
 				self::setSec3School(['course'=>$sec3school['course_title'],'school'=> $sec3school['school'], 'status'=> $sec3school['status'],'date' => $sec3school['data']] );
 				self::setSec3Skills(['title' => $sec3skills['skill_title'], 'status' => $sec3skills['status']]);
 				//$indice = array($this->sec1_pic,$this->sec1_name1,$this->sec1_name2,$this->sec1_text);
-				self::setSec4Projects([$sec4projects['p_id'],$sec4projects['p_title'],$sec4projects['p_desc'],$sec4projects['cat_id'],$sec4projects['p_url'],$sec4projects['p_tools']]);
 				self::setSec1Social($sec1social);
+				self::setSec4Projects([$sec4projects['p_id'],$sec4projects['p_title'],$sec4projects['p_desc'],$sec4projects['cat_id'],$sec4projects['p_url'],$sec4projects['p_tools'],$sec4projects['p_pic_id']]);
 				
 		}else{
 			echo "Nada encontrado";

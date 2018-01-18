@@ -197,6 +197,26 @@
 }
 
 
+/*Table*/
+
+table{
+	width: 100%;
+}
+table thead{
+	border-bottom: 1px solid black;
+}
+
+table thead tr th{
+	padding: 10px 0px;
+}
+table tbody tr th{
+	padding: 10px 0px;
+}
+table tbody tr:nth-child(even){
+	border-bottom: 1px solid grey;
+
+}
+
 
 /*Login*/
 
