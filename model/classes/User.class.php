@@ -3,7 +3,7 @@
 namespace classes;
 
 use sys\Conexao;
-use sys\Config;
+
 
 class User{
 	private $id;

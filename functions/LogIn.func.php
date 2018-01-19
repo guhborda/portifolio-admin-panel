@@ -1,5 +1,7 @@
 <?php  
+namespace functions;
 include '../autoload.php';
+
 use classes\User;
 	session_start();
 	if(isset($_POST['form']) && ($_POST['form'] == 'logar') && (($_POST['username'] != '') && ($_POST['password'] != ''))){
@@ -22,7 +24,7 @@ use classes\User;
 			$log = $user->login();
 			$result = $log->rowCount();
 			if($result == 1){
-				$sessao = $log->fetch(PDO::FETCH_ASSOC);
+				$sessao = $log->fetch(\PDO::FETCH_ASSOC);
 				$_SESSION['admin'] = $sessao;
 				$response = array("success" => true, "user" => $_SESSION['admin']);
 				

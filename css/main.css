@@ -359,13 +359,15 @@ nav .navbar-toggle {
   height: 40px;
   width: 40px;
   /* float: left; */
-  border-radius: 5px; }
+  border-radius: 5px;
+  overflow: hidden; }
 
-.school .school-item .img svg {
+.school .school-item .img svg, .school .school-item .img img {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  width: 100%; }
 
 .school .school-item h5 {
   display: block;
@@ -427,7 +429,8 @@ nav .navbar-toggle {
   left: -10px;
   float: left;
   background-color: black;
-  border-radius: 5px; }
+  border-radius: 5px;
+  overflow: hidden; }
 
 .skills .skill-item .img svg, .skills .skill-item .img img {
   position: absolute;
@@ -446,6 +449,15 @@ nav .navbar-toggle {
   left: 50%;
   transform: translateX(-50%);
   bottom: 5px; }
+
+.skills .skill-item .status.danger {
+  color: pink; }
+
+.skills .skill-item .status.alert {
+  color: #e6ee9c; }
+
+.skills .skill-item .status.success {
+  color: #00b388; }
 
 .box-page-4 h3 {
   display: inline-block;

@@ -140,6 +140,13 @@ class Index
 		return $this->sec4_projects;
 	}
 
+	public function setSec4PicProjects($pic=array()){
+		$this->sec4_pic_projects = $pic;
+	}
+	public function getSec4PicProjects(){
+		return $this->sec4_pic_projects;
+	}
+
 	public function updateIndex($con){
 		$con = new Conexao;
 
@@ -161,8 +168,7 @@ class Index
 		$ProjCategoria = "SELECT * FROM categoria"; 
 
 		$projects_pictures= "SELECT * FROM projects_pic";
-		$projects_pictures = $con->query($projects_pictures);
-		$projects_pictures = $sec1->fetch(\PDO::FETCH_ASSOC);
+		
 		$sec1 = $con->query($sec1);
 		$sec1 = $sec1->fetch(\PDO::FETCH_ASSOC);
 		$countsec1 = count($sec1);
@@ -192,6 +198,10 @@ class Index
 		$sec1social = $con->query($sec1social);
 		$sec1social = $sec1social->fetchAll();
 		
+		//query pictures sessao 4
+		$projects_pictures = $con->query($projects_pictures);
+		$projects_pictures = $projects_pictures->fetch(\PDO::FETCH_ASSOC);
+		$project_count_pic = count($projects_pictures);
 
 		if(($countsec1>=1) && ($countsec2 >= 1) && ($countsec3school >=1) && ($countsec3skill >= 1) ){
 				self::setSec1Pic($sec1['picture']);
@@ -205,6 +215,7 @@ class Index
 				//$indice = array($this->sec1_pic,$this->sec1_name1,$this->sec1_name2,$this->sec1_text);
 				self::setSec1Social($sec1social);
 				self::setSec4Projects([$sec4projects['p_id'],$sec4projects['p_title'],$sec4projects['p_desc'],$sec4projects['cat_id'],$sec4projects['p_url'],$sec4projects['p_tools'],$sec4projects['p_pic_id']]);
+				self::setSec4PicProjects([$projects_pictures['pic_id'],$projects_pictures['pic_title'],$projects_pictures['pic_alt'],$projects_pictures['pic_url']]);
 				
 		}else{
 			echo "Nada encontrado";

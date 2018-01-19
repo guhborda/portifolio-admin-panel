@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+	init();
 	$('.sidenav ul a').click(function(e){
 		e.preventDefault();
 		var page = $(this).attr('href');
@@ -8,10 +8,10 @@ $(document).ready(function(){
 	});
 
 });
+
 function init(){
-
+	$("#conteudo").load('./view/home.php');
 }
-
 function getPage(page){
 
 	if(page != 'sair'){

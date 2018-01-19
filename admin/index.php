@@ -1,4 +1,7 @@
 <?php 
+include '../autoload.php';
+use sys\Conexao;
+
 include '../config.php'; 
 include '../functions/Logged.func.php';
 
@@ -37,4 +40,6 @@ if(logged() == true){
 }else{
 	header('location: login.php');
 }
+
+
 ?>
