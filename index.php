@@ -55,7 +55,7 @@ session_start();
 	<div class="container">
 		<section class="box box-page-1 about" data-anime="bottom" id="resume">
 			<div class="box-inner row">
-				<div class="col-md-6 top-pic inner-box"></div>
+				<div class="col-md-6 top-pic inner-box"><img src="img/perfil/profile.jpg"></div>
 				<div class="col-md-6 inner-box top-about">
 
 					<h3></h3>

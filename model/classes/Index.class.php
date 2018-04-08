@@ -159,8 +159,8 @@ class Index
 
 	public function setIndex(){
 		$con = new Conexao;
-		$sec1 = "SELECT * FROM section1 WHERE id = 1";
-		$sec2 = "SELECT * FROM section2 WHERE id = 1";
+		$sec1 = "SELECT * FROM section1";
+		$sec2 = "SELECT * FROM section2";
 		$sec3school = "SELECT * FROM school ORDER BY data DESC";
 		$sec3skills = "SELECT * FROM skills";
 		$sec1social = "SELECT * FROM social";
@@ -171,39 +171,34 @@ class Index
 		
 		$sec1 = $con->query($sec1);
 		$sec1 = $sec1->fetch(\PDO::FETCH_ASSOC);
-		$countsec1 = count($sec1);
 		//query da sessão 1
 		$sec2 = $con->query($sec2);
 		$sec2 = $sec2->fetch(\PDO::FETCH_ASSOC);
-		$countsec2 = count($sec2);
 		//query da sessão 2
 
 		$sec3school = $con->query($sec3school);
 		$sec3school = $sec3school->fetch(\PDO::FETCH_ASSOC);
-		$countsec3school = count($sec3school);
+
 
 		//query da sessao 3 div school
 
 		$sec3skills = $con->query($sec3skills);
 		$sec3skills = $sec3skills->fetch(\PDO::FETCH_ASSOC);
-		$countsec3skill = count($sec3skills);
+
 
 		//query da sessao 3 div skills
 
 		$sec4projects = $con->query($sec4projects);
 		$sec4projects = $sec4projects->fetch(\PDO::FETCH_ASSOC);
-		$countprojects = count($sec4projects);
 
 		//query sessao 4
 		$sec1social = $con->query($sec1social);
-		$sec1social = $sec1social->fetchAll();
+		$sec1social = $sec1social->fetch(\PDO::FETCH_ASSOC);
 		
 		//query pictures sessao 4
 		$projects_pictures = $con->query($projects_pictures);
 		$projects_pictures = $projects_pictures->fetch(\PDO::FETCH_ASSOC);
-		$project_count_pic = count($projects_pictures);
 
-		if(($countsec1>=1) && ($countsec2 >= 1) && ($countsec3school >=1) && ($countsec3skill >= 1) ){
 				self::setSec1Pic($sec1['picture']);
 				self::setSec1Name1($sec1['first_name']);
 				self::setSec1Name2($sec1['last_name']);
@@ -216,10 +211,6 @@ class Index
 				self::setSec1Social($sec1social);
 				self::setSec4Projects([$sec4projects['p_id'],$sec4projects['p_title'],$sec4projects['p_desc'],$sec4projects['cat_id'],$sec4projects['p_url'],$sec4projects['p_tools'],$sec4projects['p_pic_id']]);
 				self::setSec4PicProjects([$projects_pictures['pic_id'],$projects_pictures['pic_title'],$projects_pictures['pic_alt'],$projects_pictures['pic_url']]);
-				
-		}else{
-			echo "Nada encontrado";
-		}
 		// Getting the section 1 of database
 
 

@@ -1,15 +1,16 @@
 <?php 
 require_once '../config.php';
-if(isset($_GET['page']) && $_GET['page'] != ''){
+if(isset($_GET['page']) && $_GET['page'] != ""){
 	$page = $_GET['page'];
-	if(file_exists($path.'/'.'view/'.$page.'.php')){
-		die($page);
+	if(file_exists($path.'admin/view/'.$page.'.php')){
+		echo $page.'.php';
 	}else{
-		die('home');
+		echo '404.php';
+		//echo $page;
 	}
 	
 }else{
-	die('home');
+	echo $page;
 }
 
 

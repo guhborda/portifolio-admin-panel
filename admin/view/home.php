@@ -2,7 +2,7 @@
 include '../../autoload.php';
 use functions\Painel;
 include '../../config.php';
-include ''.$path.'functions/Logged.func.php';
+include $path.'functions/Logged.func.php';
 $usersOnline= Painel::listarUsersOnline();
 if(logged() == true){ ?>
 <div class="row">

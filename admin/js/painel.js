@@ -14,15 +14,15 @@ function init(){
 }
 function getPage(page){
 
-	if(page != 'sair'){
+	if((page != 'sair') && (page != "")){
 		$.ajax({
 			method:'GET',
 			url:'../functions/includePage.func.php',
-			dataType:'text',
 			data:{page:page},
 			success: function(response){
-				
-				$("#conteudo").load('./view/'+response+'.php');
+				//console.log(response);
+				//console.log('./view/'+response+'.php');
+				$("#conteudo").load('./view/'+response);
 			}
 		});
 	}else if( page == 'sair'){

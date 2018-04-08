@@ -21,10 +21,10 @@ if(logged() == true){
 		<ul>
 			<a href="sair"><li><i class="fa fa-close"></i>Sair</li></a>
 			<a href="home"><li><i class="fa fa-home"></i>Dashboard</li></a>
-			<a href=""><li><i class="fa fa-database"></i>Cadastro</li></a>
-			<a href=""><li><i class="fa fa-wrench"></i>Gestão</li></a>
-			<a href=""><li><i class="fa fa-users"></i>Usuários</li></a>
-			<a href=""><li><i class="fa fa-cogs"></i>Editar Site</li></a>
+			<a href="404"><li><i class="fa fa-database"></i>Cadastro</li></a>
+			<a href="haha"><li><i class="fa fa-wrench"></i>Gestão</li></a>
+			<a href="haha"><li><i class="fa fa-users"></i>Usuários</li></a>
+			<a href="config"><li><i class="fa fa-cogs"></i>Editar Site</li></a>
 		</ul>
 	</section>
 	<section class="content" id="conteudo">
